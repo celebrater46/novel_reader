@@ -49,8 +49,8 @@ const App = () => {
   };
 
   return (
-      <Layout title="ENINGRAD" pageNum={num} lang={lang} isView={isView} headerState={headerState} >
-        <Novel lang={props.lang} isView={props.isView.novel} headerState={props.headerState} mediaMinWidth={props.mediaMinWidth} toggleHeaderAndFooter={() => toggleHeaderAndFooter()} />;
+      <Layout title="Novel Reader" pageNum={num} lang={lang} isView={isView} headerState={headerState} >
+        <Novel lang={lang} isView={isView} headerState={headerState} mediaMinWidth={mediaMinWidth} toggleHeaderAndFooter={() => toggleHeaderAndFooter()} />;
       </Layout>
   );
 }
