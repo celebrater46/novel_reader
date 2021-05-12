@@ -5,7 +5,7 @@ import errorLog from "../../static/errorLog";
 const nameOfComponent = "NovelIndex.js";
 
 const getClassName = (novelID) => {
-    if(novelID === 5000) {
+    if(novelID == 1) {
         return "novelIndex flex";
     } else if(typeof novelID === "number") {
         return "novelIndex";

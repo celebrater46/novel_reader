@@ -13,19 +13,33 @@ const getH2Style = (letters, min) => {
     }
 }
 
+const convertId = (novelID) => {
+    switch(true) {
+        case novelID < 10:
+            return "000" + novelID;
+        case novelID < 100:
+            return "00" + novelID;
+        case novelID < 1000:
+            return "0" + novelID;
+        default:
+            return novelID;
+    }
+}
+
 const TableItem = (props) => {
     const [listIsOpen, setListIsOpen] = useState(false);
-    const src = "novel/n";
+    const src = "../../static/img/n";
     const info = props.info;
     const h2Style = getH2Style(info.catchyPhrase.letters, props.mediaMinWidth);
+    const convertedId = convertId(props.novelID);
 
     return (
         <div className="novelItem">
             <p className="hr">◆　◆　◆</p>
             {/*<Link href={{ pathname: '/', query: { page: "Novel", novelID: props.novelID, num: 1, loc: 1 } }}>*/}
                 <div>
-                    <Img fname={src + props.novelID + ".jpg"} imgClass="cover" />
-                    <Img fname={src + props.novelID + ".png"} imgClass="cover" />
+                    <Img fname={src + convertedId + ".jpg"} imgClass="cover" />
+                    <Img fname={src + convertedId + ".png"} imgClass="cover" />
                 </div>
             {/*</Link>*/}
             <div>

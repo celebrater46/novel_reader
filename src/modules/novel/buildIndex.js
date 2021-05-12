@@ -7,7 +7,7 @@ const nameOfComponent = "buildindex.js";
 const getChapterName = (num, novelID, chapter) => {
     if(num && novelID && chapter) {
         const kansujiNum = kansuji(num);
-        if(novelID === 5000) {
+        if(novelID == 1) {
             return (
                 <h4>
                     <div>{ "第" + kansujiNum + "章" }</div>
@@ -38,7 +38,7 @@ const getList = (num, novelID, subtitle) => {
         return (
             <>
                 {(()=> {
-                    if(novelID === 5000) {
+                    if(novelID == 1) {
                         return (
                             <>
                                 <div>{ kansujiNum }</div>
