@@ -33,7 +33,8 @@ const kansuji = (num) => {
         if (num >= figures[keta]) {
             let max = Math.floor(num / figures[keta]);
             if (max >= 10) {
-                result += kansujiLite(max);
+                result += kansuji(max);
+                // result += kansujiLite(max);
             } else {
                 if (!(max === 1 && figures[keta] <= 1000)) { // 漢数字が「一」かつ4桁以下なら処理せず
                     result += kanjiNums[max];
