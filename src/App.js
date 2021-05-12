@@ -136,7 +136,7 @@ const App = () => {
   // const route = useRouter();
   const mediaMinWidth = 800;
   const [headerState, setHeaderState] = useState(false); // false = hidden, includes also footer.
-  const [pageNum, setPageNum] = useState(0);
+  const [num, setNum] = useState(0);
   const [lang, setLang] = useState(0); // Ja
   const [window, setWindow] = useState(null);
   // const num = useMemo(() => getPageNum(route.query.page), [route.query.page]);
@@ -146,11 +146,11 @@ const App = () => {
   //     comic: useMemo(() => isViewOrNot(route.query.comicID), [route.query.comicID]),
   //     novel: useMemo(() => isViewOrNot(route.query.novelID), [route.query.novelID]),
   // }
-  const pageNames = getPageNames();
+  // const pageNames = getPageNames();
   useEffect(() => setWindow(judgeWindowType()));
   // const window = judgeWindowType();
   // const standard = judgeStandard();
-  consoleLog([isView, pageNames], "isView, pageNames", "Index", "Index");
+  // consoleLog([isView, pageNames], "isView, pageNames", "Index", "Index");
 
   const toggleHeaderAndFooter = () => {
     moveHeaderAndFooter(!headerState);
@@ -159,7 +159,7 @@ const App = () => {
   };
 
   return (
-      <Layout title="ENINGRAD" pageNum={num} pageNames={pageNames} lang={lang} isView={isView} headerState={headerState} >
+      <Layout title="ENINGRAD" pageNum={num} lang={lang} isView={isView} headerState={headerState} >
         <Switch pageNum={num} lang={lang} isView={isView} window={window} headerState={headerState} mediaMinWidth={mediaMinWidth} toggleHeaderAndFooter={() => toggleHeaderAndFooter()} moveHeader={(bool) => moveHeaderAndFooter(bool)} judgeWindowType={() => setWindow(judgeWindowType)} />
       </Layout>
   );
