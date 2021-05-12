@@ -26,24 +26,20 @@ export const getDivStyle = (color, fontSize) => {
 }
 
 export const getPStyle = (color, sizeName, isJustify) => {
-    if(color, sizeName) {
-        const colors = getColors(color);
-        const h = window.innerHeight;
-        let style = { 
-            color: colors.color,
-        };
-        if(isJustify) { 
-            const letterSpacing = getLetterSpacing(h, sizeName);
-            if(typeof letterSpacing === "number") {
-                style["letterSpacing"] = letterSpacing + "px"; 
-            } else {
-                console.log("letterSpacing is not number at getPStyle in createPages.js.");
-            }
+    const colors = getColors(color);
+    const h = window.innerHeight;
+    let style = {
+        color: colors.color,
+    };
+    if(isJustify) {
+        const letterSpacing = getLetterSpacing(h, sizeName);
+        if(typeof letterSpacing === "number") {
+            style["letterSpacing"] = letterSpacing + "px";
+        } else {
+            console.log("letterSpacing is not number at getPStyle in createPages.js.");
         }
-        return style;
-    } else {
-        errorLog([color, sizeName, isJustify], "color, px, sizeName, isJustify", "getPStyle", nameOfComponent);
     }
+    return style;
 }
 
 export const getFontSize = (size) => {

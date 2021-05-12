@@ -7,17 +7,13 @@ import errorLog from "../../static/errorLog";
 const nameOfComponent = "TableItem.js";
 
 const getH2Style = (letters, min) => {
-    if(letters, min) {
-        const x = window.innerWidth;
-        if(x < min) {
-            const fontSize = 6; // vw
-            const width = fontSize * letters;
-            return { width: width + "vw", fontSize: fontSize + "vw" };
-        } else {
-            return { width: "100%", fontSize: "1.6rem" };
-        }
+    const x = window.innerWidth;
+    if(x < min) {
+        const fontSize = 6; // vw
+        const width = fontSize * letters;
+        return { width: width + "vw", fontSize: fontSize + "vw" };
     } else {
-        errorLog([letters, min], "letters, min", "getH2Style", nameOfComponent);
+        return { width: "100%", fontSize: "1.6rem" };
     }
 }
 
