@@ -1,5 +1,3 @@
-import React from 'react';
-
 const consoleLog = (vars, names, fn, file) => {
     // console.log("Hello World at consoleLog.js!!");
     const i = 0;
