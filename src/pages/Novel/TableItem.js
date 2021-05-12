@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import Img from "../../static/Img";
 import NovelIndex from "./NovelIndex";
+import {convertId} from "../../modules/novel/getInfo";
 
 const getH2Style = (letters, min) => {
     const x = window.innerWidth;
@@ -10,19 +11,6 @@ const getH2Style = (letters, min) => {
         return { width: width + "vw", fontSize: fontSize + "vw" };
     } else {
         return { width: "100%", fontSize: "1.6rem" };
-    }
-}
-
-const convertId = (novelID) => {
-    switch(true) {
-        case novelID < 10:
-            return "000" + novelID;
-        case novelID < 100:
-            return "00" + novelID;
-        case novelID < 1000:
-            return "0" + novelID;
-        default:
-            return novelID;
     }
 }
 

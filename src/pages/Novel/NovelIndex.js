@@ -20,7 +20,7 @@ const NovelIndex = (props) => {
         const index = buildIndex(props.novelID);
         return <ul className={className} >{ index }</ul>
     } else {
-        errorLog([props.listIsOpen, props.novelID], "props.listIsOpen, props.novelID", "NovelIndex", nameOfComponent);
+        // errorLog([props.listIsOpen, props.novelID], "props.listIsOpen, props.novelID", "NovelIndex", nameOfComponent);
         return <></>;
     }
 }
