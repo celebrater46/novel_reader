@@ -1,5 +1,5 @@
 import React from 'react';
-import style from "../static/Style";
+import style from "../static/style";
 import Footer from "./Footer";
 
 const Layout = (props) => {
