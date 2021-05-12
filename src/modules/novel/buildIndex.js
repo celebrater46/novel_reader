@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { getData } from "./getInfo";
 import kansuji from "../kansuji";
 import errorLog from "../../static/errorLog";
@@ -91,11 +90,11 @@ export const buildIndex = (novelID) => {
                 j++;
             }
             li.push(
-                <Link key={"subtitle_" + i} href={{ pathname: '/', query: { page: "Novel", novelID: novelID, num: i + 1, loc: 1 } }}>
+                // <Link key={"subtitle_" + i} href={{ pathname: '/', query: { page: "Novel", novelID: novelID, num: i + 1, loc: 1 } }}>
                     <li className="subtitle">
                         {(()=> getList(i + 1, novelID, data.subtitles[i]))()}
                     </li>
-                </Link>
+                // </Link>
             );
         }
         return li;
