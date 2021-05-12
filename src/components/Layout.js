@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import style from "../static/Style";
 import Footer from "./Footer";
 
 const Layout = (props) => {
-    let num = props.pageNum;
-    if(num === undefined) { num = 0; }
-
     return (
         <>
             { style }
