@@ -1,0 +1,68 @@
+body {
+    background-color: black;
+    color: silver;
+    margin: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+h1 {
+    font-size: 22pt;
+    font-family: "Times New Roman", "Times", "serif", "MS Mincho", "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Gothic";
+    color: "#bbb";
+    margin: 0px;
+}
+a {
+    text-decoration: none;
+    color: #bb8;
+}
+a:hover {
+    color: #fff;
+}
+p {
+    color: silver;
+}
+div {
+    margin: 0;
+    padding: 0;
+}
+menu {
+    margin: 0;
+    padding: 0;
+}
+menu a {
+    color: gray;
+}
+div.container {
+    margin: 0 auto;
+}
+img.top {
+    margin: 0 auto;
+}
+div.menu {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+div.menu > div {
+    font-size: 24pt;
+    text-align: center;
+    width: 50%;
+    margin: 10px auto;
+    color: gray;
+    position: fixed;
+}
+footer {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    position: absolute;
+    z-index: 1;
+    vertical-align: middle;
+}
+
+@media (min-width: 800px) {
+    div.menu > div {
+        width: 16%;
+    }
+}
