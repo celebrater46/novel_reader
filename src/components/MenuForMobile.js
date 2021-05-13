@@ -2,9 +2,14 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import Img from "../static/Img";
+import Hunburger from "./img/hunburger.png";
 
 const MenuForMobile = (props) => {
+    const divStyle = {
+        margin: "-5px auto 0",
+        opacity: "0.7",
+    }
+    const imgStyle = { width: "32px" }
     const [anchorEl, setAnchorEl] = React.useState(null);
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -14,9 +19,9 @@ const MenuForMobile = (props) => {
     };
 
     return (
-        <div className="menuForMobile">
+        <div style={divStyle}>
             <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-                <Img fname="hunburger.png" imgClass="hunburger" isLocal={false} />
+                <img src={Hunburger} style={imgStyle} />
             </Button>
             <Menu id="simple-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
                 {props.pageNames.map((array) =>(

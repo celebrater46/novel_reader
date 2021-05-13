@@ -29,6 +29,9 @@ const Switch = () => {
     const [window, setWindow] = useState(null);
     // const pageNames = useMemo(() => getPageNames(lang), [lang]);
     const pageNames = ["Top", "Profile", "Novels", "Diary"];
+    const style = {
+        
+    };
     useEffect(() => setWindow(judgeWindowType()));
 
     switch(num) {

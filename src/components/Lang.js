@@ -1,24 +1,38 @@
 import consoleLog from "../static/consoleLog";
-import Img from "../static/Img";
-import Jpn from '../static/img/jpn.png';
-import Usa from '../static/img/usa.png';
+import Jpn from './img/jpn.png';
+import Usa from './img/usa.png';
 
-const getClasses = (lang) => {
-    if(lang === 0) {
-        return ["lang", "lang void"];
+const getOpacity = (num, lang) => {
+    if(num === lang) {
+        return 1;
     } else {
-        return ["lang void", "lang"];
+        return 0.3;
+    }
+}
+
+const getStyle = (num, lang) => {
+    const opacity = getOpacity(num, lang);
+    return {
+        width: "26px",
+        height: "17px",
+        margin: "8px 2px 0",
+        border: "1px solid black",
+        cursor: "pointer",
+        userSelect: "none",
+        opacity: opacity,
     }
 }
 
 const Lang = (props) => {
+    const divStyle = { flex: "1" };
+    const usaStyle = getStyle(0, props.lang);
+    const jpnStyle = getStyle(1, props.lang);
     consoleLog([props.lang], "props.lang", "Lang", "components/Lang");
-    const classNames = getClasses(props.lang);
 
     return (
-        <div className="lang">
-            <Img fname={Usa} imgClass={classNames[0]} imgStyle={null} />
-            <Img fname={Jpn} imgClass={classNames[1]} imgStyle={null} />
+        <div style={divStyle} >
+            <img src={Usa} style={usaStyle} />
+            <img src={Jpn} style={jpnStyle} />
         </div>
     );
 }

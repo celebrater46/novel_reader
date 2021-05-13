@@ -11,6 +11,10 @@ const getTitle = (lang) => {
 }
 
 const Header = (props) => {
+    const h1Style = {
+        margin: "0 15px 0",
+        padding: "0",
+    }
     const title = getTitle(props.lang);
     const changeMenu = (num) => {
         return props.changeMenu(num);
@@ -18,10 +22,15 @@ const Header = (props) => {
 
     return (
         <header className="normal">
-            <h1>{ title }</h1>
+            <h1 style={h1Style}>{ title }</h1>
             <Lang lang={props.lang} />
-            <Menu pageNum={props.pageNum} pageNames={props.pageNames} lang={props.lang} changeMenu={(num) => changeMenu(num)} />
-            <MenuForMobile pageNames={props.pageNames} lang={props.lang} />
+            {(()=> {
+                if(window.innerWidth >= 800) {
+                    return <Menu pageNum={props.pageNum} pageNames={props.pageNames} lang={props.lang} changeMenu={(num) => changeMenu(num)} />;
+                } else {
+                    return <MenuForMobile pageNames={props.pageNames} lang={props.lang} />;
+                }
+            })()}
         </header>
     );
 }

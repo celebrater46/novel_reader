@@ -56,52 +56,6 @@ export default <style>{`
         margin: 0 10px;
         text-align: center;
     }
-    img.top {
-        margin: 0 auto;
-        width: 100%;
-    }
-    img.border {
-        border-width: 1px;
-    }
-    img.hunburger {
-        width: 32px;
-    }
-    img.author {
-        width: 100%;
-        margin-top: 10px;
-    }
-    img.lang {
-        width: 26px;
-        height: 17px;
-        margin: 8px 2px 0;
-        border: 1px solid black;
-        cursor: pointer;
-        user-select: none;
-    }
-    img.lang.void {
-        opacity: 0.3;
-    }
-    div.menu {
-        display: none;
-    }
-    div.menu > div.menuItem {
-        cursor: pointer;
-        user-select: none;
-    }
-    div.menuItem.jpn {
-        margin-top: -7px;
-    }
-    header > h1 {
-        margin: 0 15px 0;
-        padding: 0;
-    }
-    header > div.lang {
-        flex: 1;
-    }
-    header > div.menuForMobile {
-        margin: -5px auto 0;
-        opacity: 0.7;
-    }
     button.MuiButtonBase-root, ul.MuiList-root {
         background-color: #333;
         color: #bbb;

@@ -1,25 +1,34 @@
 import React from "react";
 
-const getClassName = (lang, name, currentPage) => {
-    let className = "menuItem";
-    if(lang !== 0) {
-        className += " jpn";
+const getDivStyle = (lang) => {
+    const marginTop = (lang === 1) ? "-7px" : "0";
+    const style = {
+        cursor: "pointer",
+        userSelect: "none",
+        marginTop: marginTop,
     }
-    if(name === currentPage) {
-        className += " currentPage";
+    return style;
+}
+
+const getAStyle = (lang) => {
+    const color = (lang === 0) ? "white" : "gray";
+    return {
+        color: color,
+        fontSize: "16px",
+        margin: "0 5px",
     }
-    return className;
 }
 
 const MenuChild = (props) => {
-    const className = getClassName(props.lang, props.pageName, props.currentPage);
+    const divStyle = getDivStyle(props.lang);
+    const aStyle = getAStyle(props.lang);
     const changeMenu = (num) => {
         return props.changeMenu(num);
     }
 
     return (
-        <div className={className} onClick={() => changeMenu(props.iNum)}>
-            <a>{ props.pageName }</a>
+        <div style={divStyle} onClick={() => changeMenu(props.iNum)}>
+            <a style={aStyle}>{ props.pageName }</a>
         </div>
     );
 }
