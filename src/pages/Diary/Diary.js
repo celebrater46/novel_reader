@@ -1,7 +1,6 @@
 import React from "react";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import {changeMenu} from "../../components/Inheritances";
 
 const getTitle = (lang) => {
     if(lang === 0) {
@@ -22,10 +21,13 @@ const getP = (lang) => {
 const Diary = (props) => {
     const title = getTitle(props.lang);
     const p = getP(props.lang);
+    const changeMenu = (num) => {
+        return props.changeMenu(num);
+    }
 
     return (
         <>
-            <Header pageNum={props.pageNum} pageNames={props.pageNames} lang={props.lang} headerState={props.headerState} isView={props.isView} changeMenu={(num) => changeMenu(props, num)} />
+            <Header pageNum={props.pageNum} pageNames={props.pageNames} lang={props.lang} headerState={props.headerState} isView={props.isView} changeMenu={(num) => changeMenu(num)} />
             <h2>{ title }</h2>
             <p>{ p }</p>
             <Footer lang={props.lang} isView={props.isView} />

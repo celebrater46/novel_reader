@@ -1,7 +1,6 @@
 import React from "react";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-// import {changeMenu} from "../../components/Inheritances";
 
 const Contents = (props) => {
     if(props.lang === 0) {

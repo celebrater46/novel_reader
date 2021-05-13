@@ -1,6 +1,5 @@
 import Menu from "../components/Menu";
 import MenuForMobile from "./MenuForMobile";
-// import {changeMenu} from "./Inheritances";
 import Lang from "./Lang";
 
 const getTitle = (lang) => {
