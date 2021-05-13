@@ -15,7 +15,11 @@ const getContents = (lang) => {
 const Top = (props) => {
     const contents = getContents(props.lang)
     const divStyle = { textAlign: "center" }
-    const imgStyle = { margin: "50px auto 20px" }
+    const imgStyle = {
+        margin: "50px auto 20px",
+        width: props.mediaMinWidth,
+        height: "auto",
+    }
     const h1Style = {
         fontSize: "48px",
         margin: "40px 0",

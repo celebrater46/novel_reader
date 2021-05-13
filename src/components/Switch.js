@@ -23,7 +23,7 @@ const getPageNames = (lang) => {
 }
 
 const Switch = () => {
-    const mediaMinWidth = 800;
+    const mediaMinWidth = "800px";
     const [num, setNum] = useState(0);
     const [lang, setLang] = useState(1); // 1==Ja
     const [window, setWindow] = useState(null);
@@ -32,9 +32,9 @@ const Switch = () => {
     useEffect(() => setWindow(judgeWindowType()));
 
     switch(num) {
-        case undefined: return <Top pageNum={num} pageNames={pageNames} lang={lang} changeMenu={(num) => setNum(num)} />;
-        case 0: return <Top pageNum={num} pageNames={pageNames} lang={lang} changeMenu={(num) => setNum(num)} />;
-        case 1: return <Profile pageNum={num} pageNames={pageNames} lang={lang} changeMenu={(num) => setNum(num)} />;
+        case undefined: return <Top pageNum={num} pageNames={pageNames} lang={lang} changeMenu={(num) => setNum(num)} mediaMinWidth={mediaMinWidth} />;
+        case 0: return <Top pageNum={num} pageNames={pageNames} lang={lang} changeMenu={(num) => setNum(num)} mediaMinWidth={mediaMinWidth} />;
+        case 1: return <Profile pageNum={num} pageNames={pageNames} lang={lang} changeMenu={(num) => setNum(num)} mediaMinWidth={mediaMinWidth} />;
         case 2: return <Novel pageNum={num} pageNames={pageNames} lang={lang} mediaMinWidth={mediaMinWidth} changeMenu={(num) => setNum(num)} />;
         case 3: return <Diary pageNum={num} pageNames={pageNames} lang={lang} changeMenu={(num) => setNum(num)} />;
         default: return (<div>Switch num の値が{num}、不正です。</div>);

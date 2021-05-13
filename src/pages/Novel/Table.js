@@ -3,6 +3,7 @@ import TableItem from './TableItem';
 import { getInfo } from "./modules/getInfo";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
+import MenuChild from "../../components/MenuChild";
 
 const items = (props) => {
     const numberOfNovels = 2;
@@ -15,17 +16,22 @@ const items = (props) => {
 }
 
 const Table = (props) => {
-    const tableItems = items(props);
+    // const tableItems = items(props);
+    const novels = getInfo();
     const changeMenu = (num) => {
         return props.changeMenu(num);
     }
 
     return (
         <>
-            <Header pageNum={props.pageNum} pageNames={props.pageNames} lang={props.lang} headerState={props.headerState} isView={props.isView} changeMenu={(num) => changeMenu(num)} />
+            <Header pageNum={props.pageNum} pageNames={props.pageNames} lang={props.lang} headerState={props.headerState} mediaMinWidth={props.mediaMinWidth} changeMenu={(num) => changeMenu(num)} />
             <div className="container novelTable">
                 <p>面白い小説をたくさん書いています！</p>
-                <div>{tableItems}</div>
+                <div>
+                    {novels.map((novel, i) => (
+                        <TableItem novel={novel} key={"tableItem:" + i} novelID={i} mediaMinWidth={props.mediaMinWidth} />
+                    ))}
+                </div>
             </div>
             <Footer lang={props.lang} isView={props.isView} />
         </>

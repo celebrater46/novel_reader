@@ -4,10 +4,14 @@ import Contacts from "./Contacts";
 import Updates from "./Updates";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import Author from "./img/author.png"
+import Author from "./img/author.jpg"
 
 const Profile = (props) => {
-    const imgStyle = { margin: "20px 0 0" }
+    const imgStyle = {
+        margin: "20px 0 0",
+        width: props.mediaMinWidth,
+        height: "auto",
+    }
     const changeMenu = (num) => {
         return props.changeMenu(num);
     }

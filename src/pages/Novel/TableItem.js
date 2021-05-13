@@ -5,9 +5,9 @@ import N0000 from "./img/n0000.jpg"
 import N0001 from "./img/n0001.png"
 import consoleLog from "../../static/consoleLog";
 
-const getH2Style = (letters, min) => {
+const getH2Style = (letters, max) => {
     const x = window.innerWidth;
-    if(x < min) {
+    if(x < max) {
         const fontSize = 6; // vw
         const width = fontSize * letters;
         return { width: width + "vw", fontSize: fontSize + "vw" };
@@ -17,8 +17,9 @@ const getH2Style = (letters, min) => {
 }
 
 const Door = (props) => {
+    console.log("maxWidth: " + props.mediaMinWidth);
     const imgStyle = {
-        width: "800px",
+        width: props.mediaMinWidth,
         height: "auto",
     }
 
@@ -35,15 +36,16 @@ const Door = (props) => {
 
 const TableItem = (props) => {
     const [listIsOpen, setListIsOpen] = useState(false);
-    const info = props.info;
+    const info = props.novel;
     const h2Style = getH2Style(info.catchyPhrase.letters, props.mediaMinWidth);
     const convertedId = convertId(props.novelID);
+    console.log("TableItems maxWidth: " + props.mediaMinWidth);
 
     return (
         <div className="novelItem">
             <p className="hr">◆　◆　◆</p>
             <div>
-                <Door novelID={convertedId} />
+                <Door novelID={convertedId} mediaMinWidth={props.mediaMinWidth} />
             </div>
             <div>
                 <h2 className="catchyPhrase" style={h2Style} >{info.catchyPhrase.text}</h2>
