@@ -16,7 +16,7 @@ const MenuForMobile = (props) => {
     return (
         <div className="menuForMobile">
             <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-                <Img fname="hunburger.png" imgClass="hunburger" />
+                <Img fname="hunburger.png" imgClass="hunburger" isLocal={false} />
             </Button>
             <Menu id="simple-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
                 {props.pageNames.map((array) =>(

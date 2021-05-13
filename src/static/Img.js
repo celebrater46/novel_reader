@@ -1,7 +1,15 @@
 import React from "react";
 
+const convertFname = (isLocal, fname) => {
+    if(isLocal) {
+        return fname;
+    } else {
+        return "./static/img/" + fname;
+    }
+}
+
 const Img = (props) => {
-    const fname = "./static/img/" + props.fname;
+    const fname = convertFname(props.isLocal, props.fname);
     const imgClass = props.imgClass;
     const style = props.imgStyle;
 

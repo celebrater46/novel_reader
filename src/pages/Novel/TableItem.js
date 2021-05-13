@@ -16,7 +16,7 @@ const getH2Style = (letters, min) => {
 
 const TableItem = (props) => {
     const [listIsOpen, setListIsOpen] = useState(false);
-    const src = "../../static/img/n";
+    const src = "img/n";
     const info = props.info;
     const h2Style = getH2Style(info.catchyPhrase.letters, props.mediaMinWidth);
     const convertedId = convertId(props.novelID);
@@ -26,8 +26,8 @@ const TableItem = (props) => {
             <p className="hr">◆　◆　◆</p>
             {/*<Link href={{ pathname: '/', query: { page: "Novel", novelID: props.novelID, num: 1, loc: 1 } }}>*/}
                 <div>
-                    <Img fname={src + convertedId + ".jpg"} imgClass="cover" />
-                    <Img fname={src + convertedId + ".png"} imgClass="cover" />
+                    <Img fname={src + convertedId + ".jpg"} imgClass="cover" isLocal={true} />
+                    <Img fname={src + convertedId + ".png"} imgClass="cover" isLocal={true} />
                 </div>
             {/*</Link>*/}
             <div>
