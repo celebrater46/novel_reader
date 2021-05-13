@@ -19,11 +19,14 @@ const Header = (props) => {
     const changeMenu = (num) => {
         return props.changeMenu(num);
     }
+    const changeLang = (num) => {
+        return props.changeLang(num);
+    }
 
     return (
         <header className="normal">
             <h1 style={h1Style}>{ title }</h1>
-            <Lang lang={props.lang} />
+            <Lang lang={props.lang} changeLang={(num) => changeLang(num)} />
             {(()=> {
                 if(window.innerWidth >= 800) {
                     return <Menu pageNum={props.pageNum} pageNames={props.pageNames} lang={props.lang} changeMenu={(num) => changeMenu(num)} />;

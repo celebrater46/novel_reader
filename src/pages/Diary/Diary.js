@@ -26,10 +26,13 @@ const Diary = (props) => {
     const changeMenu = (num) => {
         return props.changeMenu(num);
     }
+    const changeLang = (num) => {
+        return props.changeLang(num);
+    }
 
     return (
         <>
-            <Header pageNum={props.pageNum} pageNames={props.pageNames} lang={props.lang} headerState={props.headerState} isView={props.isView} changeMenu={(num) => changeMenu(num)} />
+            <Header pageNum={props.pageNum} pageNames={props.pageNames} lang={props.lang} headerState={props.headerState} isView={props.isView} changeLang={(num) => changeLang(num)} changeMenu={(num) => changeMenu(num)} />
             <center>
                 <h2 style={h2Style}>{ title }</h2>
                 <p style={pStyle}>{ p }</p>

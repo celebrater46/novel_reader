@@ -27,12 +27,15 @@ const Lang = (props) => {
     const divStyle = { flex: "1" };
     const usaStyle = getStyle(0, props.lang);
     const jpnStyle = getStyle(1, props.lang);
+    const changeLang = (num) => {
+        return props.changeLang(num);
+    }
     consoleLog([props.lang], "props.lang", "Lang", "components/Lang");
 
     return (
         <div style={divStyle} >
-            <img src={Usa} style={usaStyle} />
-            <img src={Jpn} style={jpnStyle} />
+            <img src={Usa} style={usaStyle} onClick={() => changeLang(0)} />
+            <img src={Jpn} style={jpnStyle} onClick={() => changeLang(1)} />
         </div>
     );
 }

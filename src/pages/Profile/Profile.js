@@ -15,10 +15,13 @@ const Profile = (props) => {
     const changeMenu = (num) => {
         return props.changeMenu(num);
     }
+    const changeLang = (num) => {
+        return props.changeLang(num);
+    }
 
     return (
         <>
-            <Header pageNum={props.pageNum} pageNames={props.pageNames} lang={props.lang} headerState={props.headerState} isView={props.isView} changeMenu={(num) => changeMenu(num)} />
+            <Header pageNum={props.pageNum} pageNames={props.pageNames} lang={props.lang} headerState={props.headerState} isView={props.isView} changeLang={(num) => changeLang(num)} changeMenu={(num) => changeMenu(num)} />
             <div className="container">
                 <img src={Author} style={imgStyle} />
                 <AboutMe lang={props.lang} />
