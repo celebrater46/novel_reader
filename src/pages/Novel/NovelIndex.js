@@ -1,5 +1,5 @@
 import React from 'react';
-import { buildIndex } from "../../modules/novel/buildIndex";
+import { buildIndex } from "./modules/buildIndex";
 import errorLog from "../../static/errorLog";
 
 const nameOfComponent = "NovelIndex.js";

@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import Img from "../../static/Img";
 import NovelIndex from "./NovelIndex";
-import {convertId} from "../../modules/novel/getInfo";
+import {convertId} from "./modules/getInfo";
 
 const getH2Style = (letters, min) => {
     const x = window.innerWidth;

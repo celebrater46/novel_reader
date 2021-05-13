@@ -1,5 +1,5 @@
 import { getText, getSubtitle } from "./getInfo";
-import errorLog from "../../static/errorLog";
+import errorLog from "../../../static/errorLog";
 
 const nameOfComponent = "createPages.js";
 

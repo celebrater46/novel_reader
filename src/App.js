@@ -49,8 +49,8 @@ const App = () => {
   };
 
   return (
-      <Layout title="Novel Reader" pageNum={num} lang={lang} isView={isView} headerState={headerState} >
-        <Novel lang={lang} isView={isView} headerState={headerState} mediaMinWidth={mediaMinWidth} toggleHeaderAndFooter={() => toggleHeaderAndFooter()} />;
+      <Layout title="Novel Reader">
+        <Novel pageNum={num} lang={lang} isView={isView} headerState={headerState} mediaMinWidth={mediaMinWidth} toggleHeaderAndFooter={() => toggleHeaderAndFooter()} />;
       </Layout>
   );
 }

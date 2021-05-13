@@ -9,17 +9,11 @@ const Novel = (props) => {
         return props.toggleHeaderAndFooter();
     }
 
-    return (
-        <>
-            {(()=> {
-                if(props.isView) {
-                    return <NovelView lang={props.lang} toggleHeaderAndFooter={() => toggleHeaderAndFooter()} />;
-                } else {
-                    return <Table lang={props.lang} mediaMinWidth={props.mediaMinWidth} />;
-                }
-            })()}
-        </>
-    );
+    if(props.isView) {
+        return <NovelView lang={props.lang} toggleHeaderAndFooter={() => toggleHeaderAndFooter()} />;
+    } else {
+        return <Table pageNum={props.pageNum} isView={false} lang={props.lang} mediaMinWidth={props.mediaMinWidth} />;
+    }
 }
 
 export default Novel;

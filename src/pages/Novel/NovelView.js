@@ -2,8 +2,8 @@ import React, { useState, useMemo, useEffect } from 'react';
 import HeaderForNovel from "./HeaderForNovel";
 import FooterForNovel from "./FooterForNovel";
 import ButtonsOfView from "../../components/ButtonsOfView";
-import { getFontSize, createPages, getTextArray, getDivStyle, getLettersInPage, getPs } from "../../modules/novel/createPages";
-import { calcX, calcMaxPage, calcLines, calcPMax, calcMaxLoc, calcMaxEpisode } from "../../modules/novel/calc";
+import { getFontSize, createPages, getTextArray, getDivStyle, getLettersInPage, getPs } from "./modules/createPages";
+import { calcX, calcMaxPage, calcLines, calcPMax, calcMaxLoc, calcMaxEpisode } from "./modules/calc";
 import EventListener from 'react-event-listener';
 import errorLog from "../../static/errorLog";
 

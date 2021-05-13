@@ -1,8 +1,8 @@
-import n0000 from "../../data/novel/n0000";
-import n0001 from "../../data/novel/n0001";
+import n0000 from "../data/n0000";
+import n0001 from "../data/n0001";
 import {getKansujiSubtitle} from "./buildIndex";
-import errorLog from "../../static/errorLog";
-import n0001Text from "../../data/novel/texts/n0001Text";
+import errorLog from "../../../static/errorLog";
+import n0001Text from "../data/texts/n0001Text";
 
 const nameOfComponent = "getInfo.js";
 

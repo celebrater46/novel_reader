@@ -1,6 +1,6 @@
 import { getData } from "./getInfo";
-import kansuji from "../kansuji";
-import errorLog from "../../static/errorLog";
+import kansuji from "../../../modules/kansuji";
+import errorLog from "../../../static/errorLog";
 
 const nameOfComponent = "buildindex.js";
 

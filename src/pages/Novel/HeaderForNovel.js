@@ -1,5 +1,5 @@
 import React from "react";
-import { buildOptions } from "../../modules/novel/buildIndex";
+import { buildOptions } from "./modules/buildIndex";
 import consoleLog from "../../static/consoleLog";
 
 const getOptions = (obj) => {
