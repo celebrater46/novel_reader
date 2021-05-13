@@ -1,7 +1,8 @@
 import React from 'react';
+import {changeMenu} from "./Inheritances";
 
 const getClassName = (props, name) => {
-    const currentPage = props.pageNames[props.pageNum][props.lang];
+    const currentPage = props.pageNames[props.pageNum];
     let className = "menuItem";
     if(props.lang !== 0) {
         className += " jpn";
@@ -14,11 +15,11 @@ const getClassName = (props, name) => {
 
 const getMenuItems = (props) => {
     let components = [];
-    for(let name of props.pageNames) {
-        const className = getClassName(props, name);
+    for(let i = 0; i < props.pageNames.length; i++) {
+        const className = getClassName(props, props.pageNames[i]);
         components.push(
-                <div className={className}>
-                    <a>{ name[props.lang] }</a>
+                <div className={className} onClick={() => changeMenu(i)}>
+                    <a>{ props.pageNames[i] }</a>
                 </div>
         );
     }

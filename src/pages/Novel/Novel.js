@@ -1,8 +1,9 @@
 import React from 'react';
 import Table from "./Table";
 import NovelView from "./NovelView";
+import {changeMenu} from "../../components/Inheritances";
 
-// const nameOfComponent = "Novel/index.js";
+// const nameOfComponent = "Novel/Novel.js";
 
 const Novel = (props) => {
     const toggleHeaderAndFooter = () => {
@@ -12,7 +13,7 @@ const Novel = (props) => {
     if(props.isView) {
         return <NovelView lang={props.lang} toggleHeaderAndFooter={() => toggleHeaderAndFooter()} />;
     } else {
-        return <Table pageNum={props.pageNum} isView={false} lang={props.lang} mediaMinWidth={props.mediaMinWidth} />;
+        return <Table pageNum={props.pageNum} pageNames={props.pageNames} isView={false} lang={props.lang} mediaMinWidth={props.mediaMinWidth} changeMenu={(num) => changeMenu(props, num)} />;
     }
 }
 
