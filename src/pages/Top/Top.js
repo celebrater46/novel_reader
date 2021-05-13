@@ -2,15 +2,21 @@ import React from "react";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 
-const Contents = (props) => {
-    if(props.lang === 0) {
-        return <h1>Hello World.</h1>;
+const getContents = (lang) => {
+    if(lang === 0) {
+        return "Hello World.";
     } else {
-        return <h1>こんにちは、世界。</h1>
+        return "　こんにちは、世界。";
     }
 }
 
 const Top = (props) => {
+    const contents = getContents(props.lang)
+    const h1Style = { fontSize: "100px" }
+    const divStyle = {
+        textAlign: "center",
+        margin: "150px auto 100px",
+    }
     const changeMenu = (num) => {
         return props.changeMenu(num);
     }
@@ -18,7 +24,9 @@ const Top = (props) => {
     return (
         <>
             <Header pageNum={props.pageNum} pageNames={props.pageNames} lang={props.lang} headerState={props.headerState} isView={props.isView} changeMenu={(num) => changeMenu(num)} />
-            <Contents lang={props.lang} />
+            <div style={divStyle}>
+                <h1 style={h1Style}>{ contents }</h1>
+            </div>
             <Footer lang={props.lang} isView={props.isView} />
         </>
     );

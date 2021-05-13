@@ -5,7 +5,7 @@ import Switch from "./components/Switch";
 const App = () => {
   return (
       <Layout title="Novel Reader">
-        <Switch />;
+        <Switch />
       </Layout>
   );
 }
