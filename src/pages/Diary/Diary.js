@@ -21,6 +21,8 @@ const getP = (lang) => {
 const Diary = (props) => {
     const title = getTitle(props.lang);
     const p = getP(props.lang);
+    const h2Style = { fontSize: "100px", margin: "100px auto 0" }
+    const pStyle = { margin: "100px auto" }
     const changeMenu = (num) => {
         return props.changeMenu(num);
     }
@@ -28,8 +30,10 @@ const Diary = (props) => {
     return (
         <>
             <Header pageNum={props.pageNum} pageNames={props.pageNames} lang={props.lang} headerState={props.headerState} isView={props.isView} changeMenu={(num) => changeMenu(num)} />
-            <h2>{ title }</h2>
-            <p>{ p }</p>
+            <center>
+                <h2 style={h2Style}>{ title }</h2>
+                <p style={pStyle}>{ p }</p>
+            </center>
             <Footer lang={props.lang} isView={props.isView} />
         </>
     );

@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import TopCg from "img/top_cg.png";
+import TopCg from "./img/top_cg.png";
 import Img from "../../static/Img";
 
 const getContents = (lang) => {
@@ -14,11 +14,13 @@ const getContents = (lang) => {
 
 const Top = (props) => {
     const contents = getContents(props.lang)
-    const h1Style = { fontSize: "48px" }
-    const divStyle = {
-        textAlign: "center",
-        margin: "150px auto 100px",
+    const divStyle = { textAlign: "center" }
+    const imgStyle = { margin: "50px auto 20px" }
+    const h1Style = {
+        fontSize: "48px",
+        margin: "40px 0",
     }
+
     const changeMenu = (num) => {
         return props.changeMenu(num);
     }
@@ -27,8 +29,8 @@ const Top = (props) => {
         <>
             <Header pageNum={props.pageNum} pageNames={props.pageNames} lang={props.lang} headerState={props.headerState} isView={props.isView} changeMenu={(num) => changeMenu(num)} />
             <div style={divStyle}>
+                <img src={TopCg} style={imgStyle} />
                 <h1 style={h1Style}>{ contents }</h1>
-                <Img fname={TopCg} imgClass={null} imgStyle={null} />
             </div>
             <Footer lang={props.lang} isView={props.isView} />
         </>
