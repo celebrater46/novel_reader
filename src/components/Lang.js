@@ -1,5 +1,7 @@
 import consoleLog from "../static/consoleLog";
 import Img from "../static/Img";
+import Jpn from '../static/img/jpn.png';
+import Usa from '../static/img/usa.png';
 
 const getClasses = (lang) => {
     if(lang === 0) {
@@ -15,8 +17,8 @@ const Lang = (props) => {
 
     return (
         <div className="lang">
-            <Img fname="jpn.png" imgClass={classNames[0]} isLocal={false} />
-            <Img fname="usa.png" imgClass={classNames[1]} isLocal={false} />
+            <Img fname={Usa} imgClass={classNames[0]} imgStyle={null} />
+            <Img fname={Jpn} imgClass={classNames[1]} imgStyle={null} />
         </div>
     );
 }
