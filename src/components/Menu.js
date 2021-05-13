@@ -8,8 +8,8 @@ const Menu = (props) => {
 
     return (
         <div className="menu">
-            {props.pageNames.map((name) => (
-                <MenuChild pageName={name} pageNames={props.pageNames} isMobile={false} changeMenu={(num) => changeMenu(num)} />
+            {props.pageNames.map((name, i) => (
+                <MenuChild iNum={i} pageName={name} currentPage={props.pageNames[props.pageNum]} isMobile={false} changeMenu={(num) => changeMenu(num)} />
             ))}
         </div>
     );
